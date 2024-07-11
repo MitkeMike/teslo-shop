@@ -3,6 +3,7 @@ import { ConfigModule } from '@nestjs/config';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { join } from 'path';
+import { ProductsModule } from './products/products.module';
 
 
 @Module({
@@ -22,7 +23,9 @@ import { join } from 'path';
 
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, '..','public'),
-    })
+    }),
+
+    ProductsModule
   ],
   controllers: [],
   providers: [],
